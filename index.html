@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>The Royal Academy</title>
+ <style>
+   body {
+     font-family:Verdana, Geneva, Tahoma, sans-serif;
+     background-color: #eaf4f1;
+     margin: 0;
+     padding: 0;
+     color: #333;
+     scroll-behavior: smooth;
+  }
+   .video-container {
+     display: flex;
+     justify-content: center;
+     margin: 20px 0;
+    }
+    
+   header {
+     background-color: black;
+     background-size: cover; /* Ensures the image covers the entire header */
+     background-position: center; /* Centers the background image */
+     color: rgb(254, 252, 252); /* Ensures text is readable against the background */
+     padding: 30px 20px;
+     text-align: center;
+     
+   }
+   header {
+  background-image: url('img1.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 20px;
+ }
+
+.header-container {
+  display: flex;          /* Make items appear in a row */
+  align-items: center;    /* Vertically center logo and text */
+  justify-content: flex-start; /* Align items to the left */
+ }
+
+.header-container img.logo {
+  width: 80px;            /* Resize your logo */
+  height: auto;
+  margin-right: 15px;     /* Space between logo and title */
+ }
+
+header h1 {
+  margin: 0;              /* Remove default margin */
+  font-size: 2em;
+}
+
+   nav {
+     background-color:  rgb(42, 31, 73);
+     display: flex;
+     justify-content: center;
+     padding: 12px 0;
+   }
+   nav a {
+     color: aqua;
+     padding: 12px 20px;
+     font-weight: bold;
+     margin: 0 6px;
+   }
+   nav a:hover {
+     background-color:  #8e8a10;
+   }
+   main {
+     max-width: 900px;
+     margin: 30px auto;
+     padding: 0 20px 40px;
+     background-color: white;
+     border-radius: 6px;
+     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+     display: none; /* Hide all sections initially */
+   }
+   .active-section {
+     display: block; /* Only show the active section */
+   }
+   h1, h2 {
+     margin-top: 0;
+   }
+   section {
+     margin-bottom: 40px;
+   }
+   ul {
+     list-style-type: square;
+     padding-left: 20px;
+   }
+   footer {
+     background-color: #8e8a10;
+     color: white;
+     text-align: center;
+     padding: 15px 20px;
+     margin-top: 0 40px;
+   }
+   .ialign {
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+            align-items: center;    /* Centers vertically */
+            height:auto;         /* Full viewport height */
+    }
+ </style>
+</head>
+<body>
+
+
+ <header>
+   <img src="img.jpg" alt="Website Logo" width="100" height="100">
+   <h1>The Royal Academy</h1>
+   <p>Quality Education for students in the Heart of Bhutan</p>
+ </header>
+
+
+ <nav>
+   <a href="#" onclick="showSection('home')">Home</a>
+   <a href="#" onclick="showSection('learningframework')">Learning Framework</a>
+   <a href="#" onclick="showSection('The Five Areas Of Development')">The Five Areas Of Development</a>
+ </nav>
+
+
+ <main id="home" class="active-section">
+   <section>
+     <h2 style="text-align: center;">Welcome to The Royal Academy</h2>
+     <div class="ialign">
+             <img src="https://i.postimg.cc/T3QKBYyc/Whats-App-Image-2025-09-04-at-17-3.jpg " width="400" height="300" alt="The school Logo" >
+      </div>
+     <p style="font-family:calc(); font-size:large;">The Royal Academy is a co-educational, residential institution under the Druk Gyalpo’s Institute, serving students from Grades VII to XII.
+        Its mission is to foster a diverse and balanced student community that reflects the national character and cultural experiences of Bhutan. 
+        The selection process at The Royal Academy is continually evolving, with diversity and equity at its core, ensuring representation from all 20 Dzongkhags.
+        The Academy aims to equip students with the skills and qualities necessary for realizing their full potential. Self actualization is viewed not as a 
+        final destination but as a state where individuals can act with wisdom and responsibility. Regardless of whether students pursue artistic, technical, physical,
+        or academic paths, upon graduation, they should possess the resilience and determination to navigate their learning journeys and find their own way forward.
+        Additionally, students should cultivate a sense of purpose that informs their decisions and actions. They are encouraged to be aware of and responsive to the 
+        needs of their communities both human and environmental and to apply their skills and knowledge thoughtfully, becoming valuable contributors to society.
+   </section>
+ </main>
+
+
+ <main id="learningframework" class="inactive-section">
+   <section>
+     <h2 style="text-align: center;">Learning Framework</h2>
+     <div class="ialign">
+             <img src="img.webp" width="800" height="300" alt="The 2025 Learning Framework" >
+      </div>
+     <p> The Learning Framework serves as the foundational structure that shapes all activities and educational processes at The Royal Academy, part of the Druk Gyalpo’s Institute. 
+         This framework works in harmony with the Bhutan Baccalaureate Learning Process, creating a dynamic and reciprocal relationship where each influences the other. The Learning 
+         Framework is implemented through the Learning Process, while insights gained from the Learning Process inform the design and refinement of the Learning Framework for subsequent years.
+         Central to the Learning Framework is its balanced emphasis on the Five Areas of Development, ensuring that each area receives equal attention. The Learning Process is dedicated to the
+         continuous enhancement of students’ Skills, Processes, and Watermark—elements that are vital for holistic growth. This framework is not static; it evolves in response to the needs of individuals, 
+         the school, and the broader community. The Five Areas of Development, along with the Skills, Processes, and Watermark, serve as essential pillars that support and guide the Learning Framework, 
+         ensuring it remains relevant and effective in fostering student development. In essence, the Learning Framework is designed to be adaptable and responsive, ensuring that it meets the diverse needs 
+         of learners while promoting their comprehensive growth. This synergy between the Learning Framework and the Learning Process fosters an enriching educational environment that prepares students to 
+         thrive both academically and personally.
+      </div>
+
+      
+         
+   </section>
+ </main>
+
+
+ <main id="campus" class="inactive-section">
+   <section>
+     <h2>Our Beautiful Campus</h2>
+     <p>Our school is nestled in the serene Paro Valley, Bhutan, surrounded by majestic mountains and lush forests, offering a peaceful and inspiring environment for learning. The campus is equipped with state-of-the-art facilities, and every corner is designed to foster a productive and positive atmosphere.</p>
+   </section>
+ </main>
+
+
+ <main id="The Five Areas Of Development" class="inactive-section">
+   <section>
+     <h2>Five Areas of Development</h2>
+     <div>
+      <p>
+        At our school, education goes beyond textbooks and exams. We focus on the overall growth of every learner through five key areas of development — Cerebral, Emotional, Physical, Social, and Spiritual.
+        These five areas work together to help students think critically, stay healthy, build strong relationships, manage emotions, and live mindfully. The goal is to nurture well-rounded individuals who
+         are curious, compassionate, responsible, and confident, ready to contribute positively to their communities and the world.
+      </p>
+      <h2>Holistic Development</h2>
+      <p>
+        <b>Cerebral Area Of Development</b> <br>
+        Cerebral development focuses on learning and thinking skills. It strengthens abilities in English, Dzongkha, and Mathematics, while connecting lessons to Science, Sports, Arts, and ICT. Students 
+        learn how to think, analyze, and apply knowledge creatively rather than just memorize facts.
+      </p>
+      <p>
+        <b>Emotional Area Of Development</b> <br>
+        Emotional development helps students understand and manage their feelings in a positive way. It encourages a safe and caring environment where everyone can express themselves and build confidence and self-awareness.
+      </p>
+      <p>
+        <b>Physical Area Of Development</b> <br>
+        Physical development promotes health, hygiene, and fitness through sports and physical activities. Students learn teamwork, leadership, and communication while staying active and healthy.
+      </p>
+      <p>
+        <b>Social Area Of Development</b> <br>
+        Social development focuses on building positive relationships with friends, teachers, and the community. It encourages students to be honest, open-minded, and responsible members of society 
+        who contribute to a just and harmonious world.
+      </p>
+      <p>
+        <b>Spiritual Area Of Development</b> <br>
+        Spiritual development centers on mindfulness, compassion, and empathy. It inspires students to find joy, peace, and purpose in everything they do, guided by Buddhist values and a sense of 
+        interconnectedness with others and the environment.
+      </p>
+     </div>
+   </section>
+ </main>
+
+
+ <main id="location" class="inactive-section">
+   <section>
+     <h2>Our Location</h2>
+     <p>Single Higher Secondary School is located in the beautiful Paro Valley, Bhutan. The valley is home to sacred sites and is known for its picturesque beauty, providing the perfect atmosphere for study and reflection. The campus is easily accessible from both Thimphu and the Paro International Airport.</p>
+   </section>
+ </main>
+
+
+ <main id="contact" class="inactive-section">
+   <section>
+     <h2>Contact Us</h2>
+     <p>If you would like to know more about our programs or inquire about admissions, please feel free to get in touch with us.</p>
+     <p><strong>Email:</strong> info@shss.edu.bt</p>
+     <p><strong>Phone:</strong> +975 7769002</p>
+     <p><strong>Address:</strong> Paro Valley, Bhutan</p>
+   </section>
+ </main>
+
+ <footer style="color: white; background-color:rgb(42, 31, 73);">
+    <p>&copy; 2025 The Royal Academy | All Rights Reserved</p>
+ </footer>
+
+ <script>
+   function showSection(sectionId) {
+     // Hide all sections
+     var sections = document.querySelectorAll('main');
+     sections.forEach(function(section) {
+       section.classList.remove('active-section');
+       section.classList.add('inactive-section');
+     });
+
+
+     // Show the selected section
+     var activeSection = document.getElementById(sectionId);
+     activeSection.classList.remove('inactive-section');
+     activeSection.classList.add('active-section');
+   }
+ </script>
+
+
+</body>
+</html>
+
