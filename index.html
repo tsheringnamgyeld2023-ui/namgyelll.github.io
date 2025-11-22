@@ -12,62 +12,54 @@
      padding: 0;
      color: #333;
      scroll-behavior: smooth;
-  }
-   .video-container {
-     display: flex;
-     justify-content: center;
-     margin: 20px 0;
-    }
-    
-   header {
-     background-color: black;
-     background-size: cover; /* Ensures the image covers the entire header */
-     background-position: center; /* Centers the background image */
-     color: rgb(254, 252, 252); /* Ensures text is readable against the background */
-     padding: 30px 20px;
-     text-align: center;
-     
    }
+
+   /* ---------- HEADER + NAV LAYOUT ---------- */
    header {
-  background-image: url('img1.jpeg');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  padding: 20px;
- }
+     background-image: url('bg.jpeg');
+     background-size: cover;
+     background-position: top;
+     color: white;
+     padding: 20px;
+   }
 
-.header-container {
-  display: flex;          /* Make items appear in a row */
-  align-items: center;    /* Vertically center logo and text */
-  justify-content: flex-start; /* Align items to the left */
- }
+   .header-wrapper {
+     display: flex;
+     justify-content: space-between; /* Header left, nav right */
+     align-items: center;
+     flex-wrap: wrap;
+   }
 
-.header-container img.logo {
-  width: 80px;            /* Resize your logo */
-  height: auto;
-  margin-right: 15px;     /* Space between logo and title */
- }
+   .header-left {
+     text-align: left;
+   }
 
-header h1 {
-  margin: 0;              /* Remove default margin */
-  font-size: 2em;
-}
+   .header-left h1 {
+     margin: 0;
+     font-size: 2em;
+   }
+
+   .header-left p {
+     margin: 5px 0 0 0;
+   }
 
    nav {
-     background-color:  rgb(42, 31, 73);
      display: flex;
-     justify-content: center;
-     padding: 12px 0;
    }
+
    nav a {
      color: aqua;
      padding: 12px 20px;
      font-weight: bold;
      margin: 0 6px;
+     text-decoration: none;
    }
+
    nav a:hover {
-     background-color:  #8e8a10;
+     background-color: #8e8a10;
    }
+
+   /* ---------------- PAGE STYLES ---------------- */
    main {
      max-width: 900px;
      margin: 30px auto;
@@ -77,19 +69,26 @@ header h1 {
      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
      display: none; /* Hide all sections initially */
    }
+
    .active-section {
-     display: block; /* Only show the active section */
+     display: block; /* Show active section */
    }
+
    h1, h2 {
      margin-top: 0;
    }
+
    section {
      margin-bottom: 40px;
    }
-   ul {
-     list-style-type: square;
-     padding-left: 20px;
+
+   .ialign {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: auto;
    }
+
    footer {
      background-color: #8e8a10;
      color: white;
@@ -97,42 +96,43 @@ header h1 {
      padding: 15px 20px;
      margin-top: 0 40px;
    }
-   .ialign {
-            display: flex;
-            justify-content: center; /* Centers horizontally */
-            align-items: center;    /* Centers vertically */
-            height:auto;         /* Full viewport height */
-    }
  </style>
 </head>
 <body>
 
+<!-- HEADER WITH NAV ON OPPOSITE SIDE -->
+<header>
+  <div class="header-wrapper">
+    <div class="header-left">
+      <h1>My Sculpting Project</h1>
+      <p>Hobbies are great distractions from the worries and troubles that plague daily living.</p>
+    </div>
+    <nav>
+      <a href="#" onclick="showSection('Sculpting')">Sculpting</a>
+      <a href="#" onclick="showSection('MyProject')">My Project</a>
+      <a href="#" onclick="showSection('AboutMyProject')">Significance of the project</a>
+    </nav>
+  </div>
+</header>
 
- <header>
-   <h1>My Sculpting Project</h1>
-   <p>Hobbies are great distractions from the worries and troubles that plague daily living.</p>
- </header>
-
-
- <nav>
-   <a href="#" onclick="showSection('Sculpting')">Sculpting</a>
-   <a href="#" onclick="showSection('AboutMyProject')">My Project</a>
-   <a href="#" onclick="showSection('MeaningOfMyProject')">Significance of the project</a>
- </nav>
-
-
- <main id="Sculpting" class="active-section">
-   <section>
-     <h2 style="text-align: center;">Dive deep into the world of Sculpting</h2>
-     <div class="ialign">
-             <img src="https://www.airpano.com/photogallery/images_1550/211_191315.jpg" width="695" height="300" alt="Image of scupltures" >
-      </div>
-     <p style="font-family:calc(); font-size:large;">Jimzo, meaning “clay art” (with jim meaning clay and zo meaning art), is one of Bhutan’s oldest and most sacred traditional crafts.
+<!-- SCULPTING SECTION -->
+<main id="Sculpting" class="active-section">
+  <section>
+    <div style="display: flex; justify-content: flex-start; align-items: flex-start; margin-top: 20px; gap: 15px;">
+      <!-- LEFT: Image -->
+      <img src="desi.jpg" width="424" height="318" alt="fourth desi" style="flex-shrink: 0;">
+      <!-- RIGHT: First part of paragraph -->
+      <p style="font-family:calc(); font-size:large; flex: 1;">
+        Jimzo, meaning “clay art” (with jim meaning clay and zo meaning art), is one of Bhutan’s oldest and most sacred traditional crafts.
         Its origins trace back to the 7th century during the time of Tibetan King Songtsen Gampo, when pioneering temples such as Kichu Lhakhang and Jampa Lhakhang were built. Evidence of 
-        early clay paintings from the time of Guru Rinpoche further shows that clay sculpting existed in Bhutan long before it was officially recorded. The art became more widespread during
-        the time of Terton Pema Lingpa in the 15th century, and later, in the 17th century, it was formally codified as one of the Zorig Chusum—the thirteen traditional arts and crafts of 
+        early clay paintings from the time of Guru Rinpoche further shows that clay sculpting existed in Bhutan long before it was officially recorded.The art became more widespread during the time of Terton Pema Lingpa in the 15th century, and later, in the 17th century, it was formally codified as one of the Zorig Chusum—the thirteen traditional arts and crafts of 
         Bhutan—by the Fourth Druk Desi, Gyalse Tenzin Rabgye.
-        During the 17th century, Zhabdrung Ngawang Namgyal invited the great sculptor Trulku Dzing to Bhutan, who created remarkable clay figures in Punakha and Wangduephodrang Dzongs. Since 
+      </p>
+    </div>
+
+    <!-- REST OF THE PARAGRAPH NORMAL FORMAT BELOW THE IMAGE -->
+    <p style="font-family:calc(); font-size:large; margin-top: 15px;">
+        <br> During the 17th century, Zhabdrung Ngawang Namgyal invited the great sculptor Trulku Dzing to Bhutan, who created remarkable clay figures in Punakha and Wangduephodrang Dzongs. Since 
         then, the techniques of jimzo have been passed down from master sculptors (Jimzo Lopoen) to students for generations. Bhutanese sculptors are well-known for their delicate craftsmanship, 
         strict precision, and deep devotion, as religious clay sculptures must follow exact iconographic measurements for the body, limbs, facial features, ornaments, and attire. Creating these 
         statues is considered a highly spiritual act, believed to bring merit and blessings.
@@ -145,44 +145,37 @@ header h1 {
         Jimzo holds great social, cultural, and spiritual importance in Bhutan. Sculpting is regarded as an act of devotion, and the creations serve as objects of worship, faith, and reverence for Buddhists.
         Because clay figures are found everywhere and are always in demand, it is also a valuable source of income for sculptors. To preserve and promote this ancient craft, the Royal Government of Bhutan 
         established institutions such as the National Institute for Zorig Chusum (1971) and the Trashiyangtse Institute for Zorig Chusum (1967). These institutions train young Bhutanese in traditional arts like painting,
-        woodcarving, metal casting, weaving, and especially jimzo, keeping Bhutan’s artistic heritage alive for future generations. </main>
+        woodcarving, metal casting, weaving, and especially jimzo, keeping Bhutan’s artistic heritage alive for future generations.
+    </p>
+  </section>
+</main>
 
+<!-- MY PROJECT SECTION -->
+<main id="MyProject" class="inactive-section">
+  <section>
+    <h2 style="text-align: center;">My Project</h2>
+    <div class="ialign">
+      <img src="img.webp" width="800" height="300" alt="The 2025 Learning Framework" >
+    </div>
+    <p>
+      The Learning Framework serves as the foundational structure that shapes all activities and educational processes at The Royal Academy, part of the Druk Gyalpo’s Institute. 
+      This framework works in harmony with the Bhutan Baccalaureate Learning Process, creating a dynamic and reciprocal relationship where each influences the other. The Learning 
+      Framework is implemented through the Learning Process, while insights gained from the Learning Process inform the design and refinement of the Learning Framework for subsequent years.
+      Central to the Learning Framework is its balanced emphasis on the Five Areas of Development, ensuring that each area receives equal attention. The Learning Process is dedicated to the
+      continuous enhancement of students’ Skills, Processes, and Watermark—elements that are vital for holistic growth. This framework is not static; it evolves in response to the needs of individuals, 
+      the school, and the broader community. The Five Areas of Development, along with the Skills, Processes, and Watermark, serve as essential pillars that support and guide the Learning Framework, 
+      ensuring it remains relevant and effective in fostering student development. In essence, the Learning Framework is designed to be adaptable and responsive, ensuring that it meets the diverse needs 
+      of learners while promoting their comprehensive growth. This synergy between the Learning Framework and the Learning Process fosters an enriching educational environment that prepares students to 
+      thrive both academically and personally.
+    </p>
+  </section>
+</main>
 
- <main id="My Project" class="inactive-section">
-   <section>
-     <h2 style="text-align: center;">My Project</h2>
-     <div class="ialign">
-             <img src="img.webp" width="800" height="300" alt="The 2025 Learning Framework" >
-      </div>
-     <p> The Learning Framework serves as the foundational structure that shapes all activities and educational processes at The Royal Academy, part of the Druk Gyalpo’s Institute. 
-         This framework works in harmony with the Bhutan Baccalaureate Learning Process, creating a dynamic and reciprocal relationship where each influences the other. The Learning 
-         Framework is implemented through the Learning Process, while insights gained from the Learning Process inform the design and refinement of the Learning Framework for subsequent years.
-         Central to the Learning Framework is its balanced emphasis on the Five Areas of Development, ensuring that each area receives equal attention. The Learning Process is dedicated to the
-         continuous enhancement of students’ Skills, Processes, and Watermark—elements that are vital for holistic growth. This framework is not static; it evolves in response to the needs of individuals, 
-         the school, and the broader community. The Five Areas of Development, along with the Skills, Processes, and Watermark, serve as essential pillars that support and guide the Learning Framework, 
-         ensuring it remains relevant and effective in fostering student development. In essence, the Learning Framework is designed to be adaptable and responsive, ensuring that it meets the diverse needs 
-         of learners while promoting their comprehensive growth. This synergy between the Learning Framework and the Learning Process fosters an enriching educational environment that prepares students to 
-         thrive both academically and personally.
-      </div>
-
-      
-         
-   </section>
- </main>
-
-
- <main id="campus" class="inactive-section">
-   <section>
-     <h2>Our Beautiful Campus</h2>
-     <p>Our school is nestled in the serene Paro Valley, Bhutan, surrounded by majestic mountains and lush forests, offering a peaceful and inspiring environment for learning. The campus is equipped with state-of-the-art facilities, and every corner is designed to foster a productive and positive atmosphere.</p>
-   </section>
- </main>
-
-
- <main id="About My Project" class="inactive-section">
-   <section>
-     <h2>About My Project</h2>
-     <div>
+<!-- ABOUT MY PROJECT SECTION -->
+<main id="AboutMyProject" class="inactive-section">
+  <section>
+    <h2>About My Project</h2>
+    <div>
       <p>
         At our school, education goes beyond textbooks and exams. We focus on the overall growth of every learner through five key areas of development — Cerebral, Emotional, Physical, Social, and Spiritual.
         These five areas work together to help students think critically, stay healthy, build strong relationships, manage emotions, and live mindfully. The goal is to nurture well-rounded individuals who
@@ -213,50 +206,53 @@ header h1 {
         interconnectedness with others and the environment.
       </p>
      </div>
-   </section>
- </main>
+  </section>
+</main>
 
+<!-- CAMPUS SECTION -->
+<main id="campus" class="inactive-section">
+  <section>
+    <h2>Our Beautiful Campus</h2>
+    <p>Our school is nestled in the serene Paro Valley, Bhutan, surrounded by majestic mountains and lush forests, offering a peaceful and inspiring environment for learning. The campus is equipped with state-of-the-art facilities, and every corner is designed to foster a productive and positive atmosphere.</p>
+  </section>
+</main>
 
- <main id="location" class="inactive-section">
-   <section>
-     <h2>Our Location</h2>
-     <p>Single Higher Secondary School is located in the beautiful Paro Valley, Bhutan. The valley is home to sacred sites and is known for its picturesque beauty, providing the perfect atmosphere for study and reflection. The campus is easily accessible from both Thimphu and the Paro International Airport.</p>
-   </section>
- </main>
+<!-- LOCATION SECTION -->
+<main id="location" class="inactive-section">
+  <section>
+    <h2>Our Location</h2>
+    <p>Single Higher Secondary School is located in the beautiful Paro Valley, Bhutan. The valley is home to sacred sites and is known for its picturesque beauty, providing the perfect atmosphere for study and reflection. The campus is easily accessible from both Thimphu and the Paro International Airport.</p>
+  </section>
+</main>
 
+<!-- CONTACT SECTION -->
+<main id="contact" class="inactive-section">
+  <section>
+    <h2>Contact Us</h2>
+    <p>If you would like to know more about our programs or inquire about admissions, please feel free to get in touch with us.</p>
+    <p><strong>Email:</strong> info@shss.edu.bt</p>
+    <p><strong>Phone:</strong> +975 7769002</p>
+    <p><strong>Address:</strong> Paro Valley, Bhutan</p>
+  </section>
+</main>
 
- <main id="contact" class="inactive-section">
-   <section>
-     <h2>Contact Us</h2>
-     <p>If you would like to know more about our programs or inquire about admissions, please feel free to get in touch with us.</p>
-     <p><strong>Email:</strong> info@shss.edu.bt</p>
-     <p><strong>Phone:</strong> +975 7769002</p>
-     <p><strong>Address:</strong> Paro Valley, Bhutan</p>
-   </section>
- </main>
+<footer style="color: white; background-color:rgb(42, 31, 73);">
+  <p>&copy; 2025 My Sculpting Project | All Rights Reserved</p>
+</footer>
 
- <footer style="color: white; background-color:rgb(42, 31, 73);">
-    <p>&copy; 2025 The Royal Academy | All Rights Reserved</p>
- </footer>
+<script>
+  function showSection(sectionId) {
+    var sections = document.querySelectorAll('main');
+    sections.forEach(function(section) {
+      section.classList.remove('active-section');
+      section.classList.add('inactive-section');
+    });
 
- <script>
-   function showSection(sectionId) {
-     // Hide all sections
-     var sections = document.querySelectorAll('main');
-     sections.forEach(function(section) {
-       section.classList.remove('active-section');
-       section.classList.add('inactive-section');
-     });
-
-
-     // Show the selected section
-     var activeSection = document.getElementById(sectionId);
-     activeSection.classList.remove('inactive-section');
-     activeSection.classList.add('active-section');
-   }
- </script>
-
+    var activeSection = document.getElementById(sectionId);
+    activeSection.classList.remove('inactive-section');
+    activeSection.classList.add('active-section');
+  }
+</script>
 
 </body>
 </html>
-
