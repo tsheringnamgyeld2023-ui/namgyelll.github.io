@@ -6,7 +6,7 @@
  <title>My Sculpting Project</title>
  <style>
    body {
-     font-family:Verdana, Geneva, Tahoma, sans-serif;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
      background-color: #eaf4f1;
      margin: 0;
      padding: 0;
@@ -89,8 +89,26 @@
      height: auto;
    }
 
+   /* Home page specific */
+   .home-content {
+     display: flex;
+     align-items: center;
+     gap: 20px;
+     margin-top: 20px;
+   }
+
+   .home-text {
+     flex: 1;
+   }
+
+   .home-img {
+     flex-shrink: 0;
+     width: 250px;
+     border-radius: 8px;
+   }
+
    footer {
-     background-color: #8e8a10;
+     background-color: #5d89cb;
      color: white;
      text-align: center;
      padding: 15px 20px;
@@ -108,6 +126,7 @@
       <p>Hobbies are great distractions from the worries and troubles that plague daily living.</p>
     </div>
     <nav>
+      <a href="#" onclick="showSection('Home')">Home</a>
       <a href="#" onclick="showSection('Sculpting')">Sculpting</a>
       <a href="#" onclick="showSection('MyProject')">My Project</a>
       <a href="#" onclick="showSection('AboutMyProject')">Significance of the project</a>
@@ -115,8 +134,24 @@
   </div>
 </header>
 
+<!-- HOME SECTION -->
+<main id="Home" class="active-section">
+  <section>
+    <h2 style="text-align:center;">Welcome to My Portfolio</h2>
+    <div class="home-content">
+      <div class="home-text">
+        <p>Hello! I am [Your Name]. I have a passion for sculpting and creating meaningful art. This website showcases my work in traditional Bhutanese clay art (Jimzo) and my personal projects. I hope you enjoy exploring my journey as an artist and learner.</p>
+      </div>
+      <img src="myphoto.jpg" alt="My Photo" class="home-img">
+    </div>
+    <div class="ialign" style="margin-top:20px;">
+      <img src="project.jpg" width="600" height="300" alt="My Sculpting Project">
+    </div>
+  </section>
+</main>
+
 <!-- SCULPTING SECTION -->
-<main id="Sculpting" class="active-section">
+<main id="Sculpting" class="inactive-section">
   <section>
     <div style="display: flex; justify-content: flex-start; align-items: flex-start; gap: 15px;">
       <!-- LEFT: Image with top margin -->
@@ -173,7 +208,7 @@
 
 <!-- ABOUT MY PROJECT, CAMPUS, LOCATION, CONTACT Sections remain the same -->
 
-<footer style="color: white; background-color:rgb(42, 31, 73);">
+<footer style="color: white; background-color:rgb(93, 137, 203);">
   <p>&copy; 2025 My Sculpting Project | All Rights Reserved</p>
 </footer>
 
