@@ -14,7 +14,6 @@
      scroll-behavior: smooth;
    }
 
-   /* ---------- HEADER + NAV LAYOUT ---------- */
    header {
      background-image: url('bg.jpeg');
      background-size: cover;
@@ -25,13 +24,9 @@
 
    .header-wrapper {
      display: flex;
-     justify-content: space-between; /* Header left, nav right */
+     justify-content: space-between;
      align-items: center;
      flex-wrap: wrap;
-   }
-
-   .header-left {
-     text-align: left;
    }
 
    .header-left h1 {
@@ -45,6 +40,7 @@
 
    nav {
      display: flex;
+     flex-wrap: wrap;
    }
 
    nav a {
@@ -59,19 +55,19 @@
      background-color: #8e8a10;
    }
 
-   /* ---------------- PAGE STYLES ---------------- */
+   /* UPDATED: full-width content */
    main {
-     max-width: 900px;
-     margin: 30px auto;
-     padding: 0 20px 40px;
-     background-color: white;
-     border-radius: 6px;
-     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-     display: none; /* Hide all sections initially */
+     width: 100%;
+     margin: 0;
+     padding: 20px 40px;
+     background-color: transparent;
+     border-radius: 0;
+     box-shadow: none;
+     display: none;
    }
 
    .active-section {
-     display: block; /* Show active section */
+     display: block;
    }
 
    h1, h2 {
@@ -86,14 +82,14 @@
      display: flex;
      justify-content: center;
      align-items: center;
-     height: auto;
+     margin-top: 20px;
    }
 
-   /* Home page specific */
    .home-content {
      display: flex;
-     align-items: center;
+     align-items: flex-start;
      gap: 20px;
+     flex-wrap: wrap;
      margin-top: 20px;
    }
 
@@ -102,8 +98,15 @@
    }
 
    .home-img {
-     flex-shrink: 0;
-     width: 250px;
+     width: 424px;
+     height: 318px;
+     object-fit: cover;
+     border-radius: 8px;
+   }
+
+   .sculpt-img {
+     max-width: 100%;
+     height: auto;
      border-radius: 8px;
    }
 
@@ -112,13 +115,39 @@
      color: white;
      text-align: center;
      padding: 15px 20px;
-     margin-top: 0 40px;
+   }
+
+   @media (max-width: 768px) {
+     .home-content {
+       flex-direction: column;
+       align-items: center;
+     }
+
+     nav {
+       justify-content: center;
+       margin-top: 10px;
+     }
+   }
+
+   @media (max-width: 480px) {
+     header {
+       text-align: center;
+     }
+
+     .header-wrapper {
+       flex-direction: column;
+       align-items: center;
+     }
+
+     nav a {
+       margin: 6px 0;
+       padding: 8px 12px;
+     }
    }
  </style>
 </head>
 <body>
 
-<!-- HEADER WITH NAV ON OPPOSITE SIDE -->
 <header>
   <div class="header-wrapper">
     <div class="header-left">
@@ -134,46 +163,43 @@
   </div>
 </header>
 
-<!-- HOME SECTION -->
 <main id="Home" class="active-section">
   <section>
-    <div class= "home-content">
-      <div class = "home-content">
+    <h2 style="text-align:center;">Welcome to My Portfolio</h2>
+    <div class="home-content">
+      <div class="home-text">
         <p> I'm Tshering Namgyel Dorji, a proud student at The Royal Academy. When I'm not in class, you can find me engaged in
             the energy of the outdoors, whether playing football or taking on the challenge of climbing trees. These activities 
             sharpen my focus and discipline, which I equally apply to my deepest interest: traditional Bhutanese arts and history. 
             I am fascinated by both the stories of Bhutan's past and the narratives of the wider world.
-    </p>
+        </p>
       </div>
-      <img src="myphoto.jpg" alt="My Photo" class= "home-content">
+
+      <img src="img.jpg" alt="My Photo" class="home-img" width="424" height="318">
+
     </div>
     <p>My featured work here is a personal Jimzo sculpture. Even though it's a simple model, it holds deep meaning for me as a student.
        My inspiration comes directly from contextThe Royal Academy of Mindfulness. This framework guides my education by balancing the Five Areas of Development and improving my Skills, Processes, and Watermark.
        This project proves that traditional crafts like Jimzo reflect the same structure and dedication needed for success in modern learning. By sharing this blend of art, academics, and personal interests, I hope you gain a richer understanding of what drives me.
-   </p>
-    <div class="ialign" style="margin-top:20px;">
-      <img src="project.jpg" width="600" height="300" alt="My Sculpting Project">
+    </p>
+    <div class="ialign">
+      <img src="project.jpg" width="600" height="300" alt="My Sculpting Project" class="sculpt-img">
     </div>
   </section>
 </main>
 
-<!-- SCULPTING SECTION -->
 <main id="Sculpting" class="inactive-section">
   <section>
-    <div style="display: flex; justify-content: flex-start; align-items: flex-start; gap: 15px;">
-      <!-- LEFT: Image with top margin -->
-      <img src="desi.jpg" width="424" height="318" alt="fourth desi" style="flex-shrink: 0; margin-top: 20px;">
-      <!-- RIGHT: First part of paragraph -->
-      <p style="font-family:calc(); font-size:large; flex: 1; margin-top: 20px;">
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; align-items: flex-start;">
+      <img src="desi.jpg" width="424" height="318" alt="fourth desi" class="sculpt-img">
+      <p style="flex:1; font-size: large; margin-top: 20px;">
         Jimzo, meaning “clay art” (with jim meaning clay and zo meaning art), is one of Bhutan’s oldest and most sacred traditional crafts.
         Its origins trace back to the 7th century during the time of Tibetan King Songtsen Gampo, when pioneering temples such as Kichu Lhakhang and Jampa Lhakhang were built. Evidence of 
-        early clay paintings from the time of Guru Rinpoche further shows that clay sculpting existed in Bhutan long before it was officially recorded.The art became more widespread during the time of Terton Pema Lingpa in the 15th century, and later, in the 17th century, it was formally codified as one of the Zorig Chusum—the thirteen traditional arts and crafts of 
+        early clay paintings from the time of Guru Rinpoche further shows that clay sculpting existed in Bhutan long before it was officially recorded. The art became more widespread during the time of Terton Pema Lingpa in the 15th century, and later, in the 17th century, it was formally codified as one of the Zorig Chusum—the thirteen traditional arts and crafts of 
         Bhutan—by the Fourth Druk Desi, Gyalse Tenzin Rabgye.
       </p>
     </div>
-
-    <!-- REST OF THE PARAGRAPH NORMAL FORMAT BELOW THE IMAGE -->
-    <p style="font-family:calc(); font-size:large; margin-top: 15px;">
+    <p style="font-size: large; margin-top: 15px;">
         <br> During the 17th century, Zhabdrung Ngawang Namgyal invited the great sculptor Trulku Dzing to Bhutan, who created remarkable clay figures in Punakha and Wangduephodrang Dzongs. Since 
         then, the techniques of jimzo have been passed down from master sculptors (Jimzo Lopoen) to students for generations. Bhutanese sculptors are well-known for their delicate craftsmanship, 
         strict precision, and deep devotion, as religious clay sculptures must follow exact iconographic measurements for the body, limbs, facial features, ornaments, and attire. Creating these 
@@ -192,12 +218,11 @@
   </section>
 </main>
 
-<!-- MY PROJECT SECTION -->
 <main id="MyProject" class="inactive-section">
   <section>
     <h2 style="text-align: center;">My Project</h2>
     <div class="ialign">
-      <img src="img.webp" width="800" height="300" alt="The 2025 Learning Framework" >
+      <img src="img.webp" width="800" height="300" alt="The 2025 Learning Framework" class="sculpt-img">
     </div>
     <p>
       The Learning Framework serves as the foundational structure that shapes all activities and educational processes at The Royal Academy, part of the Druk Gyalpo’s Institute. 
@@ -213,9 +238,7 @@
   </section>
 </main>
 
-<!-- ABOUT MY PROJECT, CAMPUS, LOCATION, CONTACT Sections remain the same -->
-
-<footer style="color: white; background-color:rgb(93, 137, 203);">
+<footer>
   <p>&copy; 2025 My Sculpting Project | All Rights Reserved</p>
 </footer>
 
@@ -226,10 +249,8 @@
       section.classList.remove('active-section');
       section.classList.add('inactive-section');
     });
-
-    var activeSection = document.getElementById(sectionId);
-    activeSection.classList.remove('inactive-section');
-    activeSection.classList.add('active-section');
+    document.getElementById(sectionId).classList.remove('inactive-section');
+    document.getElementById(sectionId).classList.add('active-section');
   }
 </script>
 
