@@ -1,6 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>My Sculpting Project</title>
+ <style>
+   /* ------------------ GENERAL ------------------ */
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+   body {
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     background-color: #eaf4f1;
+     color: #333;
+     scroll-behavior: smooth;
+   }
+
+   a {
+     text-decoration: none;
+   }
+
+   /* ------------------ HEADER ------------------ */
+   header {
+     background-image: url('bg.jpeg');
+     background-size: cover;
+     background-position: center top;
+     color: white;
+     padding: 20px 0;
+     width: 100%;
+   }
+
+   .header-wrapper {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     max-width: 1400px;
+     margin: 0 auto;
+     padding: 0 20px;
+     flex-wrap: wrap;
+   }
+
+   .header-left h1 {
+     font-size: 2.5em;
+   }
+
+   .header-left p {
+     margin-top: 8px;
+     font-size: 1em;
+     color: #f0f0f0;
+   }
+
+   nav {
+     display: flex;
+     gap: 15px;
+     flex-wrap: wrap;
+   }
+
+   nav a {
+     color: aqua;
+     font-weight: bold;
+     padding: 10px 18px;
+     border-radius: 4px;
+     transition: background 0.3s;
+   }
+
+   nav a:hover {
+     background-color: #8e8a10;
+   }
+
+   /* ------------------ MAIN CONTENT ------------------ */
+   main {
+     width: 100%;
+     padding: 20px;
+   }
+
+   section {
+     max-width: 1200px;
+     margin: 0 auto 40px auto;
+   }
+
+   h1, h2 {
+     margin-bottom: 15px;
+   }
+
+   .home-content {
+     display: flex;
+     gap: 20px;
+     flex-wrap: wrap;
+     align-items: flex-start;
+     margin-top: 20px;
+   }
+
+   .home-text {
+     flex: 1 1 300px;
+   }
+
+   /* ------------------ IMAGE STYLING ------------------ */
+   .home-img, .sculpt-img {
+     width: 424px;
+     height: 318px;
+     object-fit: cover;
+     border-radius: 8px;
+     display: block;
+   }
+
+   .ialign {
+     display: flex;
+     justify-content: center;
+     margin-top: 20px;
+     flex-wrap: wrap;
+   }
+
+   /* ------------------ GALLERY CAPTION ------------------ */
+   .caption {
+     font-size: 0.9em;
+     color: #333;
+     margin-top: 5px;
+   }
+
+   .active-section {
+     display: block;
+   }
+
+   .inactive-section {
+     display: none;
+   }
+
+   /* ------------------ FOOTER ------------------ */
+   footer {
+     background-color: #5d89cb;
+     color: white;
+     text-align: center;
+     padding: 15px 20px;
+   }
+
+   /* ------------------ RESPONSIVE ------------------ */
+   @media (max-width: 1024px) {
+     .header-left h1 {
+       font-size: 2em;
+     }
+   }
+
+   @media (max-width: 768px) {
+     .home-content {
+       flex-direction: column;
+       align-items: center;
+     }
+     nav {
+       justify-content: center;
+       margin-top: 10px;
+     }
+   }
+
+   @media (max-width: 480px) {
+     .header-wrapper {
+       flex-direction: column;
+       align-items: center;
+       text-align: center;
+     }
+     nav {
+       flex-direction: column;
+       gap: 8px;
+       width: 100%;
+     }
+     nav a {
+       padding: 8px 12px;
+     }
+   }
+ </style>
+</head>
+<body>
+
+<header>
+  <div class="header-wrapper">
+    <div class="header-left">
+      <h1>My Sculpting Project</h1>
+      <p>Hobbies are great distractions from the worries and troubles that plague daily living.</p>
+    </div>
+    <nav>
+      <a href="#" onclick="showSection('Home')">Home</a>
+      <a href="#" onclick="showSection('Sculpting')">Sculpting</a>
+      <a href="#" onclick="showSection('MyProject')">My Project</a>
+      <a href="#" onclick="showSection('AboutMyProject')">Significance</a>
+      <a href="#" onclick="showSection('Gallery')">Gallery</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HOME SECTION -->
+<main id="Home" class="active-section">
+  <section>
+    <h2 style="text-align:center;">Welcome to My Portfolio</h2>
+    <div class="home-content">
+      <div class="home-text">
+        <p> I'm Tshering Namgyel Dorji, a proud student at The Royal Academy. When I'm not in class, you can find me engaged in
+            the energy of the outdoors, whether playing football or taking on the challenge of climbing trees. These activities 
+            sharpen my focus and discipline, which I equally apply to my deepest interest: traditional Bhutanese arts and history. 
+            I am fascinated by both the stories of Bhutan's past and the narratives of the wider world.
+        </p>
+      </div>
+      <img src="img.jpg" alt="My Photo" class="home-img">
+    </div>
+    <p>My featured work here is a personal Jimzo sculpture. Even though it's a simple model, it holds deep meaning for me as a student.
+       My inspiration comes directly from contextThe Royal Academy of Mindfulness. This framework guides my education by balancing the Five Areas of Development and improving my Skills, Processes, and Watermark.
+       This project proves that traditional crafts like Jimzo reflect the same structure and dedication needed for success in modern learning. By sharing this blend of art, academics, and personal interests, I hope you gain a richer understanding of what drives me.
+    </p>
+    <div class="ialign">
+      <img src="project.jpg" alt="My Sculpting Project" class="sculpt-img">
+    </div>
+  </section>
+</main>
+
+<!-- SCULPTING SECTION -->
+<main id="Sculpting" class="inactive-section">
+  <section>
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; align-items: flex-start;">
+      <img src="desi.jpg" alt="fourth desi" class="sculpt-img">
+      <p style="flex:1; font-size: large; margin-top: 20px;">
+        Jimzo, meaning “clay art” (with jim meaning clay and zo meaning art), is one of Bhutan’s oldest and most sacred traditional crafts.
+        Its origins trace back to the 7th century during the time of Tibetan King Songtsen Gampo, when pioneering temples such as Kichu Lhakhang and Jampa Lhakhang were built. Evidence of 
+        early clay paintings from the time of Guru Rinpoche further shows that clay sculpting existed in Bhutan long before it was officially recorded. The art became more widespread during the time of Terton Pema Lingpa in the 15th century, and later, in the 17th century, it was formally codified as one of the Zorig Chusum—the thirteen traditional arts and crafts of 
+        Bhutan—by the Fourth Druk Desi, Gyalse Tenzin Rabgye.
+      </p>
+    </div>
+    <p style="font-size: large; margin-top: 15px;">
+      <br>During the 17th century, Zhabdrung Ngawang Namgyal invited the great sculptor Trulku Dzing to Bhutan, who created remarkable clay figures in Punakha and Wangduephodrang Dzongs. Since 
+      then, the techniques of jimzo have been passed down from master sculptors (Jimzo Lopoen) to students for generations. Bhutanese sculptors are well-known for their delicate craftsmanship, 
+      strict precision, and deep devotion, as religious clay sculptures must follow exact iconographic measurements for the body, limbs, facial features, ornaments, and attire. Creating these 
+      statues is considered a highly spiritual act, believed to bring merit and blessings.
+    </p>
+  </section>
+</main>
+
+<!-- MY PROJECT SECTION -->
+<main id="MyProject" class="inactive-section">
+  <section>
+    <h2 style="text-align: center;">My Project</h2>
+    <div class="ialign">
+      <img src="img.webp" alt="The 2025 Learning Framework" class="sculpt-img">
+    </div>
+    <p>
+      The Learning Framework serves as the foundational structure that shapes all activities and educational processes at The Royal Academy, part of the Druk Gyalpo’s Institute. 
+      This framework works in harmony with the Bhutan Baccalaureate Learning Process, creating a dynamic and reciprocal relationship where each influences the other. The Learning 
+      Framework is implemented through the Learning Process, while insights gained from the Learning Process inform the design and refinement of the Learning Framework for subsequent years.
+    </p>
+  </section>
+</main>
+
+<!-- SIGNIFICANCE SECTION -->
+<main id="AboutMyProject" class="inactive-section">
+  <section>
+    <h2>Significance of the Project</h2>
+    <p> <!-- Your content here --> </p>
+  </section>
+</main>
+
+<!-- GALLERY SECTION -->
+<main id="Gallery" class="inactive-section">
+  <section>
+    <h2 style="text-align: center;">Gallery</h2>
+    <div class="home-content" style="justify-content: center;">
+      <div style="text-align: center; margin: 10px;">
+        <img src="gallery1.jpg" alt="Gallery Image 1" class="sculpt-img" onclick="toggleCaption(this)">
+        <p class="caption" style="display:none;">Caption for Image 1</p>
+      </div>
+      <div style="text-align: center; margin: 10px;">
+        <img src="gallery2.jpg" alt="Gallery Image 2" class="sculpt-img" onclick="toggleCaption(this)">
+        <p class="caption" style="display:none;">Caption for Image 2</p>
+      </div>
+      <div style="text-align: center; margin: 10px;">
+        <img src="gallery3.jpg" alt="Gallery Image 3" class="sculpt-img" onclick="toggleCaption(this)">
+        <p class="caption" style="display:none;">Caption for Image 3</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 My Sculpting Project | All Rights Reserved</p>
+</footer>
+
+<script>
+  function showSection(sectionId) {
+    document.querySelectorAll('main').forEach(section => {
+      section.classList.remove('active-section');
+      section.classList.add('inactive-section');
+    });
+    document.getElementById(sectionId).classList.remove('inactive-section');
+    document.getElementById(sectionId).classList.add('active-section');
+  }
+
+  function toggleCaption(img) {
+    const caption = img.nextElementSibling;
+    if (caption.style.display === "none") {
+      caption.style.display = "block";
+    } else {
+      caption.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1" />
  <title>My Sculpting Project</title>
