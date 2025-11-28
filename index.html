@@ -175,6 +175,19 @@
        padding: 8px 12px;
      }
    }
+
+   .video-container-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.video-container-center iframe {
+  max-width: 100%;
+  width: 660px;  /* your original width */
+  height: 415px; /* your original height */
+  border: none;
+}
  </style>
 </head>
 <body>
@@ -237,7 +250,14 @@
       strict precision, and deep devotion, as religious clay sculptures must follow exact iconographic measurements for the body, limbs, facial features, ornaments, and attire. Creating these 
       statues is considered a highly spiritual act, believed to bring merit and blessings.
     </p>
-    <iframe width="660" height="415" src="https://www.youtube.com/embed/o4BpAcTR_4c?si=s250W0uqb7DRB5Cl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="video-container-center">
+  <iframe src="https://www.youtube.com/embed/o4BpAcTR_4c?si=s250W0uqb7DRB5Cl"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+  </iframe>
+</div>
+
   </section>
 </main>
 
