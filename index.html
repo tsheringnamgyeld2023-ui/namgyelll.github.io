@@ -5,16 +5,15 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>My Sculpting Project</title>
 
- <!-- 🔥 FAVICON ADDED HERE -->
  <link rel="icon" type="image/png" href="logo.png">
 
  <style>
-   /* ------------------ GENERAL ------------------ */
    * {
      box-sizing: border-box;
      margin: 0;
      padding: 0;
    }
+
    body {
      font-family: Verdana, Geneva, Tahoma, sans-serif;
      background-color: #eaf4f1;
@@ -26,7 +25,6 @@
      text-decoration: none;
    }
 
-   /* ------------------ HEADER ------------------ */
    header {
      background-image: url('bg.jpeg');
      background-size: cover;
@@ -43,48 +41,53 @@
      max-width: 1400px;
      margin: 0 auto;
      padding: 0 20px;
-     flex-wrap: wrap;
+     flex-wrap: nowrap; /* prevent wrapping */
+   }
+
+   .header-left {
+     display: flex;
+     align-items: center;
+     gap: 15px;
    }
 
    .header-left h1 {
-     font-size: 2.5em;
+     font-size: 2em;
+     margin: 0;
    }
 
    .header-left p {
-     margin-top: 8px;
-     font-size: 1em;
+     margin: 0;
+     font-size: 0.9em;
      color: #f0f0f0;
    }
 
    nav {
      display: flex;
-     gap: 15px;
-     flex-wrap: wrap;
+     gap: 12px; /* reduced gap */
+     flex-shrink: 0; /* prevent shrinking */
    }
 
    nav a {
      color: aqua;
      font-weight: bold;
-     padding: 10px 18px;
+     font-size: 0.95em;
+     padding: 8px 12px;
      border-radius: 4px;
      transition: background 0.3s;
+     white-space: nowrap; /* prevent wrapping */
    }
 
    nav a:hover {
      background-color: #8e8a10;
    }
 
-   /* ------------------ MAIN CONTENT ------------------ */
+   /* Rest of your existing styles remain unchanged */
    main {
-  width: 100%;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white */
-  background-image: url(''); /* optional image */
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  border-radius: 8px; /* optional rounded edges */
-  }
+     width: 100%;
+     padding: 20px;
+     background-color: rgba(255, 255, 255, 0.8); 
+     border-radius: 8px; 
+   }
 
    section {
      max-width: 1200px;
@@ -107,7 +110,6 @@
      flex: 1 1 300px;
    }
 
-   /* ------------------ IMAGE STYLING ------------------ */
    .home-img, .sculpt-img {
      width: 424px;
      height: 318px;
@@ -123,7 +125,6 @@
      flex-wrap: wrap;
    }
 
-   /* ------------------ GALLERY CAPTION ------------------ */
    .caption {
      font-size: 0.9em;
      color: #333;
@@ -138,7 +139,6 @@
      display: none;
    }
 
-   /* ------------------ FOOTER ------------------ */
    footer {
      background-color: #5d89cb;
      color: white;
@@ -146,20 +146,16 @@
      padding: 15px 20px;
    }
 
-   /* ------------------ RESPONSIVE ------------------ */
    @media (max-width: 1024px) {
      .header-left h1 {
-       font-size: 2em;
+       font-size: 1.8em;
      }
    }
 
    @media (max-width: 768px) {
-     .home-content {
-       flex-direction: column;
-       align-items: center;
-     }
      nav {
        justify-content: center;
+       flex-wrap: wrap; /* allow wrapping on smaller screens */
        margin-top: 10px;
      }
    }
@@ -181,17 +177,17 @@
    }
 
    .video-container-center {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
+     display: flex;
+     justify-content: center;
+     margin-top: 20px;
+   }
 
-.video-container-center iframe {
-  max-width: 100%;
-  width: 660px;  /* your original width */
-  height: 415px; /* your original height */
-  border: none;
-}
+   .video-container-center iframe {
+     max-width: 100%;
+     width: 660px;
+     height: 415px;
+     border: none;
+   }
  </style>
 </head>
 <body>
@@ -199,8 +195,11 @@
 <header>
   <div class="header-wrapper">
     <div class="header-left">
-      <h1>My Sculpting Project</h1>
-      <p>Hobbies are great distractions from the worries and troubles that plague daily living.</p>
+      <img src="sculpting.jpg" alt="Logo" style="width:60px; height:60px; object-fit:cover; border-radius:8px;">
+      <div>
+        <h1>My Sculpting Project</h1>
+        <p>Hobbies are great distractions from the worries and troubles that plague daily living.</p>
+      </div>
     </div>
     <nav>
       <a href="#" onclick="showSection('AboutMe')">About Me</a>
@@ -211,7 +210,6 @@
     </nav>
   </div>
 </header>
-
 <!-- HOME SECTION -->
 <main id="AboutMe" class="active-section">
   <section>
