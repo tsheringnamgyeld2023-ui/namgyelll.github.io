@@ -128,6 +128,7 @@
      font-size: 0.9em;
      color: #333;
      margin-top: 5px;
+     display:none;
    }
 
    .active-section {
@@ -187,6 +188,37 @@
      height: 415px;
      border: none;
    }
+
+   /* ⭐⭐⭐ NEW GALLERY GRID ⭐⭐⭐ */
+   .gallery-grid {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 15px;
+     margin-top: 20px;
+     justify-items: center;
+   }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px;
+  margin-top: 20px;
+  justify-items: center;
+}
+
+.gallery-grid img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.caption {
+  display: none;
+  text-align: center;
+  margin-top: 5px;
+}
+
  </style>
 </head>
 <body>
@@ -228,7 +260,10 @@
        By sharing this blend of art, academics, and personal interests, I hope you gain a richer understanding of what motivates me as a learner. This sculpture is more than just a piece of work; it represents my curiosity, my effort, and the values I practice at The Royal Academy. It is a small example of how I try to connect who I am with what I learn, and how both continue to shape the person I am becoming.
     </p>
     <div class="ialign">
-      <img src="project.jpg" alt="My Sculpting Project" class="sculpt-img">
+      <img src="Sculpture.jpg" 
+         alt="My Sculpting Project" 
+         class="sculpt-img"
+         style="width: 1050px; height: auto;">
     </div>
   </section>
 </main>
@@ -268,7 +303,10 @@
   <section>
     <h2 style="text-align: center;">My Project</h2>
     <div class="ialign">
-      <img src="img.webp" alt="image of my project" class="sculpt-img">
+      <img src="Sculpture.jpg" 
+         alt="My Sculpting Project" 
+         class="sculpt-img"
+         style="width: 1050px; height: auto;">
     </div>
     <p style="flex:1; font-size: large; margin-top: 20px;">When I look at my model, I see more than just a sculpture; I see a visual journey that brings together everything I learned about meditation.
         At first, it may appear to be a simple meditating figure, but for me, every part of it carries meaning. The calm posture of the figure shows the inner stillness and clarity that I came to understand 
@@ -288,7 +326,10 @@
   <section>
     <h2>Significance of my Project</h2>
       <div class="ialign">
-         <img src="img.webp" alt="whole project" class="sculpt-img">
+         <img src="Sculpture.jpg" 
+         alt="My Sculpting Project" 
+         class="sculpt-img"
+         style="width: 950px; height: auto;">
        </div>
     <p style="flex:1; font-size: large; margin-top: 20px;"> The meditating figure at the center of the model represents the core idea of meditation. Its calm and balanced posture expresses inner peace, mental clarity, and 
         emotional stability. The way the figure sits reflects both major forms of meditation: Focused Attention is shown through the slightly directed posture that suggests 
@@ -310,23 +351,33 @@
 </p>
   </section>
 </main>
-
-<!-- GALLERY SECTION -->
 <main id="Gallery" class="inactive-section">
   <section>
     <h2 style="text-align: center;">Gallery</h2>
-    <div class="home-content" style="justify-content: center;">
-      <div style="text-align: center; margin: 10px;">
-        <img src="gallery.jpg" alt="Gallery Image 1" class="sculpt-img" onclick="toggleCaption(this)">
-        <p class="caption" style="display:none;">Image from the NIZC</p>
+    <div class="gallery-grid">
+      <div>
+        <img src="gallery.jpg" alt="Gallery Image 1" onclick="toggleCaption(this)">
+        <p class="caption">Image from the NIZC</p>
       </div>
-      <div style="text-align: center; margin: 10px;">
-        <img src="gallery2.jpg" alt="Gallery Image 2" class="sculpt-img" onclick="toggleCaption(this)">
-        <p class="caption" style="display:none;">Caption for Image 2</p>
+      <div>
+        <img src="gallery5.jpg" alt="Gallery Image 2" onclick="toggleCaption(this)">
+        <p class="caption">Class in TRA</p>
       </div>
-      <div style="text-align: center; margin: 10px;">
-        <img src="gallery3.jpg" alt="Gallery Image 3" class="sculpt-img" onclick="toggleCaption(this)">
-        <p class="caption" style="display:none;">Caption for Image 3</p>
+      <div>
+        <img src="gallery3.jpg" alt="Gallery Image 3" onclick="toggleCaption(this)">
+        <p class="caption">Products of the students</p>
+      </div>
+      <div>
+        <img src="gallary2.jpg" alt="Gallery Image 4" onclick="toggleCaption(this)">
+        <p class="caption">Products of the students</p>
+      </div>
+      <div>
+        <img src="gallery4.jpg" alt="Gallery Image 5" onclick="toggleCaption(this)">
+        <p class="caption">Inside of a class</p>
+      </div>
+      <div>
+        <img src="sculptor4.jpg" alt="Gallery Image 6" onclick="toggleCaption(this)">
+        <p class="caption">Image of my model</p>
       </div>
     </div>
   </section>
@@ -348,11 +399,7 @@
 
   function toggleCaption(img) {
     const caption = img.nextElementSibling;
-    if (caption.style.display === "none") {
-      caption.style.display = "block";
-    } else {
-      caption.style.display = "none";
-    }
+    caption.style.display = caption.style.display === "none" ? "block" : "none";
   }
 </script>
 
